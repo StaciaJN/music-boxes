@@ -1,14 +1,20 @@
-var url = 'https://bcw.blob.core.windows.net/public/img/sounds/scale-00'
+//javascript here
+var url = 'https://bcw.blob.core.windows.net/public/img/sounds/scale-0'
 
 var boombox = document.getElementById('boombox')
 
 function playTune(num){
+    var tuneUrl = url
   
-  var tuneUrl = url + num + '.mp3'
+  if(num > 10){
+    tuneUrl += '0'
+  }
+  tuneUrl += num + '.mp3'
+  
     
-    console.log(tuneUrl)
+  console.log(tuneUrl)
     
-    boombox.src = tuneUrl
-    boombox.play()
+  boombox.src = tuneUrl
+  boombox.play()
     
 }
